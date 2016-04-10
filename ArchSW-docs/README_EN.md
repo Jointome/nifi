@@ -5,4 +5,4 @@ Nifi is a graphical interface designed to automate data flows between different 
 In order to install the project it is necessary to install the maven. We start by using the command "sudo apt-get install maven" which may result in the installation of an older version (check with "mvn -version" command). If the version is less than 3.1.0, you should go to https://maven.apache.org/download.cgi in oreder to download and follow the steps in the following link https://maven.apache.org/install.html . Then through the command line, access to the project directory and run the "mvn clean install" command and wait for the end, wich may take a while. At the end you should access the NIFI-assembly directory that is in the project main folder. Run the "ls -lhd target/nifi*" command to check which version of NIFI is present, and then the command "mkdir ~/example-nifi-deploy tar xzf target/nifi-*-bin.tar.gz -C ~/example-nifi-deploy ls .l ~/example-nifi-deploy/".
   
 #Execution 
-    In the terminal, run the command "cd ~/example-nifi-deploy/nifi-* ./bin/nifi.sh start".
+In the terminal, run the command "cd ~/example-nifi-deploy/nifi-* ./bin/nifi.sh start".
