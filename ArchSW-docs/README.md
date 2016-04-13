@@ -10,7 +10,7 @@ fazer download e seguir os passos na seguinte ligação
 `https://maven.apache.org/install.html`.
 De seguida devemos através da linha de comandos aceder ao diretorio do projeto e correr o comando 
 `mvn clean install`
- e esperar que acabe o qeu pode demorar.
+ e esperar que acabe o que pode demorar.
 No final deve aceder ao diretório 
 `nifi-assembly` 
 que se encontra no projeto. Correr o comando 
