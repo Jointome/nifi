@@ -34,7 +34,7 @@ que se encontra no projeto. Correr o comando
 `ls .l ~/example-nifi-deploy/`
 
 ###Execução
-Para executar na linha de comandos incerir o comando 
+Para executar na linha de comandos inserir o comando 
 
 `cd ~/example-nifi-deploy/nifi-*`
 
