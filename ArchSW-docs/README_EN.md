@@ -29,3 +29,7 @@ In the terminal, run the command
 `cd ~/example-nifi-deploy/nifi-*` 
 
 `./bin/nifi.sh start".`
+
+In the internet browser:
+
+http://localhost:8080/nifi/
