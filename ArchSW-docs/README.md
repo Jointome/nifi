@@ -39,3 +39,7 @@ Para executar na linha de comandos inserir o comando
 `cd ~/example-nifi-deploy/nifi-*`
 
 `./bin/nifi.sh start`
+
+No explorador de internet:
+
+http://localhost:8080/nifi/
