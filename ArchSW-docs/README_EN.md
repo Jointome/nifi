@@ -24,12 +24,21 @@ to check which version of NIFI is present, and then the command
 
   
 #Execution 
-In the terminal, run the command 
+Once NiFi has been installed, it can be started by using the following mechanism appropriate for Linux/Mac OSX users.
+In the terminal, navigate to the directory where NiFi was installed. And there are two ways to run NiFi: 
 
-`cd ~/example-nifi-deploy/nifi-*` 
+In the foreground using the command 
+  
+`./bin/nifi.sh run`
 
-`./bin/nifi.sh start".`
+This will leave the application running until the user presses Ctrl-C.
 
-In the internet browser:
+Or in the background using the command
+
+`./bin/nifi.sh start`
+
+This will initiate the application to begin running.
+
+After the NiFi has been started, for create and monitor dataflow we open a web browser and navigate to
 
 http://localhost:8080/nifi/
