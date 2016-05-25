@@ -42,3 +42,37 @@ This will initiate the application to begin running.
 After the NiFi has been started, for create and monitor dataflow we open a web browser and navigate to
 
 http://localhost:8080/nifi/
+
+
+#REPORT
+
+##Basics of NIFI
+
+###Processor
+
+###component
+
+###Fileflow
+
+
+##Development - Component
+
+The component diagram is used to represent components, ports, interfaces and relationships between all of the previously mentioned to form larger components and/or software systems. 
+
+
+Component diagram shows components, provided and required interfaces, ports, and relationships between them. This type of diagrams is used in Component-Based Development (CBD) to describe systems with Service-Oriented Architecture (SOA).
+Component-based development is based on assumptions that previously constructed components could be reused and that components could be replaced by some other "equivalent" or "conformant" components, if needed.
+The artifacts that implement component are intended to be capable of being deployed and re-deployed independently, for instance to update an existing system.
+
+![alt tag](https://github.com/Jointome/nifi/blob/master/ArchSW-docs/component.png)
+
+##Physical - Deployment
+
+![alt tag](https://github.com/Jointome/nifi/blob/master/ArchSW-docs/deployment.png)
+
+##Process - Activity
+
+![alt tag](https://github.com/Jointome/nifi/blob/master/ArchSW-docs/process.JPG)
+
+##Scenarios
+![alt tag](https://github.com/Jointome/nifi/blob/master/ArchSW-docs/scenarios.png)
