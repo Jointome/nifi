@@ -56,14 +56,18 @@ http://localhost:8080/nifi/
 
 ##Diagrams
 
-####Development - Component
+####Development
 
 The component diagram is used to represent components, ports, interfaces and relationships between all of the previously mentioned to form larger components and/or software systems. 
 
 
 
-
+#######Component
 ![alt tag](https://github.com/Jointome/nifi/blob/master/ArchSW-docs/component.png)
+
+#######Package
+
+![alt tag](https://github.com/Jointome/nifi/blob/master/ArchSW-docs/packagediagram.jpg)
 
 ####Physical - Deployment
 
