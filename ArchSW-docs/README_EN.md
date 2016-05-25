@@ -69,9 +69,9 @@ The component diagram is used to represent components, ports, interfaces and rel
 
 ![alt tag](https://github.com/Jointome/nifi/blob/master/ArchSW-docs/deployment.png)
 
-###Process - Activity
+####Process - Activity
 
 ![alt tag](https://github.com/Jointome/nifi/blob/master/ArchSW-docs/process.JPG)
 
-###Scenarios
+####Scenarios
 ![alt tag](https://github.com/Jointome/nifi/blob/master/ArchSW-docs/scenarios.png)
