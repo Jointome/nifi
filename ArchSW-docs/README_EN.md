@@ -46,6 +46,15 @@ http://localhost:8080/nifi/
 
 #REPORT
 
+##Introduction
+
+It is intended with this report to describe a study done to an application chosen by the group, within the Software Architecture discipline.
+
+In an environment which we may find various systems, where some of the systems created data and some of the systems consumed data, and often these systems differ, it becomes necessary to create something that facilitates communication between these systems.
+
+NiFi was built to automate the flow of data between systems. It supports powerful and scalable directed graphs of data routing, transformation, and system mediation logic.  NiFi has a web-based user interface for design, control, feedback, and monitoring of dataflows.
+
+
 ##Basics of NIFI
 
 ####Processor
