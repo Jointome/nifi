@@ -55,7 +55,10 @@ In an environment which we may find various systems, where some of them create a
 NiFi was built to automate the flow of data between systems. It supports powerful and scalable directed graphs of data routing, transformation, and system mediation logic.  NiFi has a web-based user interface for design, control, feedback, and monitoring of dataflows.
 
 
-##Basics of NIFI
+##NIFI
+
+//description of the program
+
 
 ->Processor: Processors actually perform the work. A processor does some combination of data Routing, Transformation, or Mediation between systems. Processors have access to attributes of a given FlowFile and its content stream. Processors can operate on zero or more FlowFiles in a given unit of work and either commit that work or rollback.
 
@@ -66,6 +69,7 @@ NiFi was built to automate the flow of data between systems. It supports powerfu
 ->Flow Controller: The Flow Controller maintains the knowledge of how processes actually connect and manages the threads and allocations thereof which all processes use. The Flow Controller acts as the broker facilitating the exchange of FlowFiles between processors.
 
 ##Diagrams
+
 
 ####Logical View
 
