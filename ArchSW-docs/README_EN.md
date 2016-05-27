@@ -4,23 +4,28 @@
 Table of Contents
 =================
 
- * [Description](#description)
-  * [REPORT](#report)
-    * [Introduction](#introduction)
-    * [NIFI](#nifi)
-    * [Diagrams](#diagrams)
-        * [Logical View](#logical-view)
-            * [Class Diagram](#class-diagram)
-        * [Development View](#development-view)
-            * [Component Diagram](#component-diagram)
-            * [Package Diagram](#package-diagram)
-        * [Process  View](#process--view)
-            * [Activity Diagram](#activity-diagram)
-        * [Physical View](#physical-view)
-            * [Deployment Diagram](#deployment-diagram)
-        * [Scenarios](#scenarios)
-            * [Use Cases](#use-cases)
+ 1. [Description](#description)
+ 2. [Introduction](#introduction)
+ 3. [NIFI](#nifi)
+ 4. [Diagrams](#diagrams)
+    4.1. [Logical View](#logical-view)
+          a. [Class Diagram](#class-diagram)
+    4.2. [Development View](#development-view)
+          a. [Component Diagram](#component-diagram)
+          b. [Package Diagram](#package-diagram)
+    4.3. [Process  View](#process--view)
+          a. [Activity Diagram](#activity-diagram)
+    4.4. [Physical View](#physical-view)
+          a. [Deployment Diagram](#deployment-diagram)
+    4.5. [Scenarios](#scenarios)
+          a. [Use Cases](#use-cases)
 
+1. Step 1
+2. Step 2
+3. Step 3
+   * Item 3a
+   * Item 3b
+   * Item 3c
 
 #Description
 Nifi is a graphical interface designed to automatic data flows between different computer, networks, even when the protocols differ.
