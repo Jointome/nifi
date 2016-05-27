@@ -74,16 +74,35 @@ http://localhost:8080/nifi/
 
 #REPORT
 
-##Basics of NIFI
+##Introduction
 
-####Processor
+It is intended with this report to describe a study done to an application chosen by the group, within the Software Architecture discipline.
 
-####Component
+In an environment which we may find various systems, where some of them create and others consume data, often these systems differ in somes aspects, it becomes necessary to create something that simplifys communication between these systems.
 
-####Fileflow
+NiFi was built to automate the flow of data between systems. It supports powerful and scalable directed graphs of data routing, transformation, and system mediation logic.  NiFi has a web-based user interface for design, control, feedback, and monitoring of dataflows.
+
+
+##NIFI
+
+//description of the program
+
+
+->Processor: Processors actually perform the work. A processor does some combination of data Routing, Transformation, or Mediation between systems. Processors have access to attributes of a given FlowFile and its content stream. Processors can operate on zero or more FlowFiles in a given unit of work and either commit that work or rollback.
+
+->Connection :  Connections provide the actual linkage between processors. These act as queues and allow various processes to interact at differing rates. These queues then can be prioritized dynamically and can have upper bounds on load, which enable back pressure.
+
+->Flowfile: A FlowFile represents each object moving through the system and for each one, NiFi keeps track of a map of key/value pair attribute strings and its associated content of zero or more bytes.
+
+->Flow Controller: The Flow Controller maintains the knowledge of how processes actually connect and manages the threads and allocations thereof which all processes use. The Flow Controller acts as the broker facilitating the exchange of FlowFiles between processors.
 
 ##Diagrams
+<<<<<<< HEAD
 Since Nifi is a real complex system, in some diagrams we had to focus on the most interesting part of the system, witch will be highlighted.
+=======
+
+
+>>>>>>> ef3041607052b3acd593f0b9c7dbd0783213f63b
 ####Logical View
 ######Class Diagram
 
