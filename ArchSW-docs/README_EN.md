@@ -1,3 +1,31 @@
+#Arquitetura de Software
+
+Table of Contents
+=================
+
+  * [Description](#description)
+  * [Installation](#installation)
+  * [Execution](#execution)
+  * [REPORT](#report)
+    * [Basics of NIFI](#basics-of-nifi)
+        * [Processor](#processor)
+        * [Component](#component)
+        * [Fileflow](#fileflow)
+    * [Diagrams](#diagrams)
+        * [Logical View](#logical-view)
+            * [Class Diagram](#class-diagram)
+        * [Development View](#development-view)
+            * [Component Diagram](#component-diagram)
+            * [Package Diagram](#package-diagram)
+        * [Process  View](#process--view)
+            * [Activity Diagram](#activity-diagram)
+        * [Physical View](#physical-view)
+            * [Deployment Diagram](#deployment-diagram)
+        * [Scenarios](#scenarios)
+            * [Use Cases](#use-cases)
+
+
+
 #Description
 Nifi is a graphical interface designed to automatic data flows between different computer, networks, even when the protocols differ.
   
@@ -55,31 +83,36 @@ http://localhost:8080/nifi/
 ####Fileflow
 
 ##Diagrams
-
+Since Nifi is a real complex system, in some diagrams we had to focus on the most interesting part of the system, witch will be highlighted.
 ####Logical View
+######Class Diagram
+
+Has the class diagram is the moste complex of them all, we just focused on the processor api
 
 ![alt tag](https://github.com/Jointome/nifi/blob/master/ArchSW-docs/classdiagram.jpg)
 
-####Development
+####Development View
 
 The component diagram is used to represent components, ports, interfaces and relationships between all of the previously mentioned to form larger components and/or software systems. 
 
-
-
-######Component
+######Component Diagram
 ![alt tag](https://github.com/Jointome/nifi/blob/master/ArchSW-docs/component.png)
 
-######Package
+######Package Diagram
 
 ![alt tag](https://github.com/Jointome/nifi/blob/master/ArchSW-docs/packagediagram.jpg)
 
-####Physical - Deployment
-
-![alt tag](https://github.com/Jointome/nifi/blob/master/ArchSW-docs/deployment.png)
-
-####Process - Activity
+####Process  View
+######Activity Diagram
 
 ![alt tag](https://github.com/Jointome/nifi/blob/master/ArchSW-docs/process.JPG)
 
+####Physical View
+######Deployment Diagram
+
+![alt tag](https://github.com/Jointome/nifi/blob/master/ArchSW-docs/deployment.png)
+
+
 ####Scenarios
+######Use Cases
 ![alt tag](https://github.com/Jointome/nifi/blob/master/ArchSW-docs/scenarios.png)
