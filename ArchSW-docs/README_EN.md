@@ -54,32 +54,55 @@ Since Nifi is a real complex system, in some diagrams we had to focus on the mos
 ####Logical View
 ######Class Diagram
 
-Has the class diagram is the moste complex of them all, we just focused on the processor api
+Classes:
+-------------------FlowFileFilter
+-)))))))ProcessSession
+-)))))))AbstractProcessor
+-)))))))ProcessSessionFactory
+-)))))))Relationship
+-)))))))ProcessContext
+-SchedulingContext
+-)))))))ProcessorInitializationContext
+-AbstractSessionFactoryProcessor
 
-![alt tag](https://github.com/Jointome/nifi/blob/master/ArchSW-docs/classdiagram.jpg)
+Has the class diagram is the most complex of all diagrams, we just focused on the Processor API. The Processor is the most important part of nifi, because is the only Component to which access is given to create, remove, modify, or inspect FlowFiles (data and attributes). So next come the classes on the Processor API and what they do.
+
+- The AbstractProcessor is the base class for all Processor Implementation, it provides several methods that will be of interest to Processor developers.
+
+- The ProcessSession class, provides a mechanism by which FlowFiles can be created, destroyed, examined, cloned, and transferred to other Processors. 
+
+- The ProcessContext provides information about how the Processor is currently configured making a connection between a Processor and the framework. Furthermore it allows the processor to perform Framework-specific tasks, has controling other Processors resoucers, to avoid consumig unnecessary resources.
+
+- The ProcessSessionFactory creates the ProcessSession from the AbstractProcessor or the Processor classes.
+
+- The Relationships define the routes to which a FlowFile may be transfered from a Processor. 
+
+- The ProcessorInitializationContext exposes configuration to the Processor that doesn't change throughout the Processor life, like the unique identifier of the Processor.
+
+![alt tag](https://github.com/Jointome/nifi/blob/master/ArchSW-docs/Images/classdiagram.jpg)
 
 ####Development View
 
 The component diagram is used to represent components, ports, interfaces and relationships between all of the previously mentioned to form larger components and/or software systems. 
 
 ######Component Diagram
-![alt tag](https://github.com/Jointome/nifi/blob/master/ArchSW-docs/component.png)
+![alt tag](https://github.com/Jointome/nifi/blob/master/ArchSW-docs/Images/component.png)
 
 ######Package Diagram
 
-![alt tag](https://github.com/Jointome/nifi/blob/master/ArchSW-docs/packagediagram.jpg)
+![alt tag](https://github.com/Jointome/nifi/blob/master/ArchSW-docs/Images/packagediagram.jpg)
 
 ####Process  View
 ######Activity Diagram
 
-![alt tag](https://github.com/Jointome/nifi/blob/master/ArchSW-docs/process.JPG)
+![alt tag](https://github.com/Jointome/nifi/blob/master/ArchSW-docs/Images/process.JPG)
 
 ####Physical View
 ######Deployment Diagram
 
-![alt tag](https://github.com/Jointome/nifi/blob/master/ArchSW-docs/deployment.png)
+![alt tag](https://github.com/Jointome/nifi/blob/master/ArchSW-docs/Images/deployment.png)
 
 
 ####Scenarios
 ######Use Cases
-![alt tag](https://github.com/Jointome/nifi/blob/master/ArchSW-docs/scenarios.png)
+![alt tag](https://github.com/Jointome/nifi/blob/master/ArchSW-docs/Images/scenarios.png)
