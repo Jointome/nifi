@@ -54,17 +54,6 @@ Since Nifi is a real complex system, in some diagrams we had to focus on the mos
 ####Logical View
 ######Class Diagram
 
-Classes:
--------------------FlowFileFilter
--)))))))ProcessSession
--)))))))AbstractProcessor
--)))))))ProcessSessionFactory
--)))))))Relationship
--)))))))ProcessContext
--SchedulingContext
--)))))))ProcessorInitializationContext
--AbstractSessionFactoryProcessor
-
 Has the class diagram is the most complex of all diagrams, we just focused on the Processor API. The Processor is the most important part of nifi, because is the only Component to which access is given to create, remove, modify, or inspect FlowFiles (data and attributes). So next come the classes on the Processor API and what they do.
 
 - The AbstractProcessor is the base class for all Processor Implementation, it provides several methods that will be of interest to Processor developers.
