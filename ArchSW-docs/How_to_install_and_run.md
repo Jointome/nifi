@@ -3,7 +3,7 @@ Table of Contents
 =================
 
   1. [Installation](#installation)
-  2. [Execution](#execution)  
+  2. [Execution](#execution) 
 
 #Installation
 In order to install the project it is necessary to install the maven. We start by using the command 
