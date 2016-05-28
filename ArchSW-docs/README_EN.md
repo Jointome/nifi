@@ -134,6 +134,21 @@ This Api allows the user to control a NiFi instance in real time.
 
 ![alt tag](https://github.com/Jointome/nifi/blob/master/ArchSW-docs/Images/deployment.png)
 
+NiFi executes within a JVM living within a host operating system, and the NiFi components lives within the JVM. 
+
+- *Web Server:* hosts NiFi’s HTTP-based command and control API.
+
+- *Flow Controller:* is the brains of the operation. It provides threads for extensions to run on and manages their schedule of when they’ll receive resources to execute.
+
+- *Extensions:* are operate/execute within the JVM. 
+
+- *FlowFile Repository:* is where NiFi keeps track of the state of what it knows about a given FlowFile that is presently active in the flow. The implementation of the repository is pluggable. The default approach is a persistent Write-Ahead Log that lives on a specified disk partition.
+
+- *Content Repository:* is where the actual content bytes of a given FlowFile live. The implementation of the repository is pluggable. The default approach is a fairly simple mechanism, which stores blocks of data in the file system. More than one file system storage location can be specified so as to get different physical partitions engaged to reduce contention on any single volume.
+
+- *Provenance Repository:* is where all provenance event data is stored. The repository construct is pluggable with the default implementation being to use one or more physical disk volumes. Within each location event data is indexed and searchable.
+
+
 ####Scenarios
 #####Use Cases
 ![alt tag](https://github.com/Jointome/nifi/blob/master/ArchSW-docs/Images/scenarios.png)
