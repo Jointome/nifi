@@ -33,7 +33,19 @@ To study the application architecture we use a set of Unified Modelling Language
 
 ##NIFI
 
-//description of the program
+Apache NiFi is a dataflow system based on the concepts of flow-based programming. It supports powerful and scalable directed graphs of data routing, transformation, and system mediation logic. NiFi has a web-based user interface for design, control, feedback, and monitoring of dataflows [1].
+
+###Istallation and Getting Started
+
+To getting started is necessary that you have a NiFi, and you can be downloaded it from the NiFi [download page] (http://nifi.apache.org/download.html). In the page you can choose the appropriate package for your operating system.
+
+To install NiFi is required a JDK 1.7 or higher and the Apache Maven 3.1.0 or higher in the operative system. And the way that it can be installed depend the OS.
+
+In our system (Linux), in the shell we use the command `mvn clean install` to build the application. After it be done, to test the application we created a new folder and we unpack the directory "nifi-0.5.1-bin”  that's locate in the directory nifi-assembly, from it to deploy NiFi, with the command `tar xzf target/nifi-*-bin.tar.gz -C ~/example-nifi-deploy`.
+
+In the testing folder created we run in the shell the command `./bin/nifi.sh start` to start NiFi.
+
+After NiFi has been started we can bring up the User Interface in order to create and monitor our dataflow. To use the User Interface we redirect a web browser to `http://localhost:8080/nifi`. The port 8080 is the default port, but it can be changed. As the port, other instances of NiFi like, security or data storage, can be configured, and for help it can be used the [adimin guide] (https://nifi.apache.org/docs/nifi-docs/html/administration-guide.html). 
 
 
 ->Processor: Processors actually perform the work. A processor does some combination of data Routing, Transformation, or Mediation between systems. Processors have access to attributes of a given FlowFile and its content stream. Processors can operate on zero or more FlowFiles in a given unit of work and either commit that work or rollback.
@@ -44,7 +56,7 @@ To study the application architecture we use a set of Unified Modelling Language
 
 ->Flow Controller: The Flow Controller maintains the knowledge of how processes actually connect and manages the threads and allocations thereof which all processes use. The Flow Controller acts as the broker facilitating the exchange of FlowFiles between processors.
 
-##Diagrams
+###Diagrams
 
 Since Nifi is a real complex system, in some diagrams we had to focus on the most interesting part of the system, witch will be highlighted.
 
