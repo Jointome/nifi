@@ -151,6 +151,10 @@ NiFi executes within a JVM living within a host operating system, and the NiFi c
 
 ####Scenarios
 #####Use Cases
+
+In order to use nifi, it's necessary to use a dataflow. The user can create one dataflow, use one template, or edit a previously used one.
+When the user has te dataflow ready, the next step is to create a processor, or in case of using a template, configure. When the processor is in the dataflow, it's time to add the components, which can be of two types, input or output. After we can connect the components with themselves and with and the processor/processors. When all it's configured the dataflow can start and the user can also stop it.
+
 ![alt tag](https://github.com/Jointome/nifi/blob/master/ArchSW-docs/Images/scenarios.png)
 
 
