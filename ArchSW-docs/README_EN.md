@@ -33,21 +33,18 @@ To study the application architecture we use a set of Unified Modelling Language
 
 Due to the fact the application is very wide, in the diagrams construction we used only a few classses, these classes which are considered of great importance for the application.
 
-=================
 
 #NiFi
 
 Nifi is a graphical interface designed to automatic data flows between different computer, networks, even when the protocols differ.
 Apache NiFi is a dataflow system based on the concepts of flow-based programming. It supports powerful and scalable directed graphs of data routing, transformation, and system mediation logic. NiFi has a web-based user interface for design, control, feedback, and monitoring of dataflows [1].
 
-=================
 
 ###Diagrams
 
 Since Nifi is a real complex system, in some diagrams we had to focus on the most interesting part of the system, witch will be highlighted.
 
 ####Logical View
-=================
 #####Class Diagram
 
 As the class diagram is the most complex of all diagrams, we just focused on the Processor API. The Processor is the most important part of nifi, because is the only Component to which access is given to create, remove, modify, or inspect FlowFiles (data and attributes). So next come the classes on the Processor API and what they do.
@@ -67,7 +64,6 @@ As the class diagram is the most complex of all diagrams, we just focused on the
 ![alt tag](https://github.com/Jointome/nifi/blob/master/ArchSW-docs/Images/classdiagram.jpg)
 
 ####Development View
-=================
 #####Component Diagram
 
 Nifi has a lot of componets wich are difficult to understand. As so the component diagram can easily help to compreend how the components fit together. Next we will explain what each component does and which components relate to each other and who.
@@ -118,34 +114,33 @@ Once the NIFi application has been started, the bootstrap is then responsible fo
 - NarClassLoader
 In a containerized environment like NiFi, it is important to allow different extension points to have arbitrary dependencies without those dependencies affecting other, unrelated extension points. In Java, the mechanism for doing this is the ClassLoader. NiFi defines its own implementation of the ClassLoader, the NarClassLoader. Each NiFi Archive (NAR) has its own NarClassLoader that is responsible for loading the classes defined in that NAR. Additionally, it is responsible for providing native library isolation, so that a Processor, for example, can depend on native libraries that are not shared with other components. This is accomplished by placing those native libraries in the NAR's native directory.
 
-For more information about NiFi Archives and how they are used, see the NiFi Archives (NARs) section in the Developer Guide.
 ![alt tag](https://github.com/Jointome/nifi/blob/master/ArchSW-docs/Images/component.png)
 
 #####Package Diagram
 
 ![alt tag](https://github.com/Jointome/nifi/blob/master/ArchSW-docs/Images/packagediagram.jpg)
 
+The Package Diagram is complex, so we opted for studing only the API section. Folowing the definitions and explanations on the Component Diagram and the Class Diagram we can easily understand what is appening in the API package.
+As we can see in the diagram the processor is the most solicitaded package, it can manipulate the FlowFile, annotations, reports, interact with components. Therefore we can see they all focus in the Processor in the end.
+This Api allows the user to control a NiFi instance in real time.
+
 ####Process  View
-=================
 #####Activity Diagram
 
 ![alt tag](https://github.com/Jointome/nifi/blob/master/ArchSW-docs/Images/process.JPG)
 
 ####Physical View
-=================
 #####Deployment Diagram
 
 ![alt tag](https://github.com/Jointome/nifi/blob/master/ArchSW-docs/Images/deployment.png)
 
 ####Scenarios
-=================
 #####Use Cases
 ![alt tag](https://github.com/Jointome/nifi/blob/master/ArchSW-docs/Images/scenarios.png)
 
-=================
+
 
 ##Conclusion
 
-=================
 
 ##References
