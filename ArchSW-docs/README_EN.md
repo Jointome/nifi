@@ -19,12 +19,15 @@ Table of Contents
     5. [Scenarios](#scenarios)
           1. [Use Cases](#use-cases)
 
+=================
+
 #Description
 
 Nifi is a graphical interface designed to automatic data flows between different computer, networks, even when the protocols differ.
 Apache NiFi is a dataflow system based on the concepts of flow-based programming. It supports powerful and scalable directed graphs of data routing, transformation, and system mediation logic. NiFi has a web-based user interface for design, control, feedback, and monitoring of dataflows [1].
 
-=======
+=================
+
 ##Introduction
 
 It is intended with this report to describe a study done to an application chosen by the group, within the Software Architecture discipline.
@@ -35,10 +38,13 @@ NiFi was built to automate the flow of data between systems. It supports powerfu
 
 To study the application architecture we use a set of Unified Modelling Language (UML) diagrams.   As soon, to define the logical view we use class diagram, for the process view we use  the activity diagram, for the development view we use two diagrams, component and package diagram, for the physical view we use a deployment diagram, and for senarios we use the use cases diagram.
 
+=================
 
 ###Diagrams
 
 Since Nifi is a real complex system, in some diagrams we had to focus on the most interesting part of the system, witch will be highlighted.
+
+=================
 
 ####Logical View
 #####Class Diagram
@@ -59,6 +65,7 @@ Has the class diagram is the most complex of all diagrams, we just focused on th
 
 ![alt tag](https://github.com/Jointome/nifi/blob/master/ArchSW-docs/Images/classdiagram.jpg)
 
+=================
 
 ####Development View
 #####Component Diagram
@@ -119,16 +126,21 @@ For more information about NiFi Archives and how they are used, see the NiFi Arc
 
 ![alt tag](https://github.com/Jointome/nifi/blob/master/ArchSW-docs/Images/packagediagram.jpg)
 
+=================
+
 ####Process  View
 #####Activity Diagram
 
 ![alt tag](https://github.com/Jointome/nifi/blob/master/ArchSW-docs/Images/process.JPG)
+
+=================
 
 ####Physical View
 #####Deployment Diagram
 
 ![alt tag](https://github.com/Jointome/nifi/blob/master/ArchSW-docs/Images/deployment.png)
 
+=================
 
 ####Scenarios
 #####Use Cases
