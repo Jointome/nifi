@@ -47,7 +47,7 @@ Since NiFi is a real complex system, in some diagrams we had to focus on the mos
 ####Logical View
 #####Class Diagram
 
-![alt tag](https://github.com/Jointome/NiFi/blob/master/ArchSW-docs/Images/classdiagram.jpg)
+![alt tag](https://github.com/Jointome/nifi/blob/master/ArchSW-docs/Images/classdiagram.jpg)
 
 As the class diagram is the most complex of all diagrams, we just focused on the Processor API. The Processor is the most important part of NiFi, because is the only Component to which access is given to create, remove, modify, or inspect FlowFiles (data and attributes). So next come the classes on the Processor API and what they do.
 
@@ -66,7 +66,7 @@ As the class diagram is the most complex of all diagrams, we just focused on the
 ####Development View
 #####Component Diagram
 
-![alt tag](https://github.com/Jointome/NiFi/blob/master/ArchSW-docs/Images/component.png)
+![alt tag](https://github.com/Jointome/nifi/blob/master/ArchSW-docs/Images/component.png)
 
 NiFi has a lot of components which are difficult to understand. As so the component diagram can easily help to comprehend how the components fit together. Next we will explain what each component does and which components relate to each other and who.
 
@@ -120,7 +120,7 @@ In a containerized environment like NiFi, it is important to allow different ext
 
 #####Package Diagram
 
-![alt tag](https://github.com/Jointome/NiFi/blob/master/ArchSW-docs/Images/packagediagram.jpg)
+![alt tag](https://github.com/Jointome/nifi/blob/master/ArchSW-docs/Images/packagediagram.jpg)
 
 The Package Diagram is complex, so we opted for studying only the API section. Following the definitions and explanations on the Component Diagram and the Class Diagram we can easily understand what is happening in the API package.
 As we can see in the diagram the processor is the most solicited package, it can manipulate the FlowFile, annotations, reports, interact with components. Therefore we can see they all focus in the Processor in the end.
@@ -138,8 +138,8 @@ This Api allows the user to control a NiFi instance in real time.
 
 ####Scenarios
 #####Use Cases
-In order to use nifi, it's necessary to use a dataflow. The user can create one dataflow, use one template, or edit a previously used one.
-When the user has te dataflow ready, the next step is to create a processor, or in case of using a template, configure. When the processor is in the dataflow, it's time to add the components, which can be of two types, input or output. After we can connect the components with themselves and with and the processor/processors. When all it's configured the dataflow can start and the user can also stop it.
+In order to use NiFi, it's necessary to use a dataflow. The user can create one dataflow, use one template, or edit a previously used one.
+When the user has the dataflow ready, the next step is to create a processor, or in case of using a template, configure. When the processor is in the dataflow, it's time to add the components, which can be of two types, input or output. After we can connect the components with themselves and with and the processor/processors. When all it's configured the dataflow can start and the user can also stop it.
 
 
 ![alt tag](https://github.com/Jointome/nifi/blob/master/ArchSW-docs/Images/scenarios.png)
