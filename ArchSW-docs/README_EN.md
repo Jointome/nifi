@@ -20,7 +20,10 @@ Table of Contents
           1. [Use Cases](#use-cases)
 
 #Description
+
 Nifi is a graphical interface designed to automatic data flows between different computer, networks, even when the protocols differ.
+Apache NiFi is a dataflow system based on the concepts of flow-based programming. It supports powerful and scalable directed graphs of data routing, transformation, and system mediation logic. NiFi has a web-based user interface for design, control, feedback, and monitoring of dataflows [1].
+
 =======
 ##Introduction
 
@@ -32,29 +35,13 @@ NiFi was built to automate the flow of data between systems. It supports powerfu
 
 To study the application architecture we use a set of Unified Modelling Language (UML) diagrams.   As soon, to define the logical view we use class diagram, for the process view we use  the activity diagram, for the development view we use two diagrams, component and package diagram, for the physical view we use a deployment diagram, and for senarios we use the use cases diagram.
 
-##NIFI
-
-Apache NiFi is a dataflow system based on the concepts of flow-based programming. It supports powerful and scalable directed graphs of data routing, transformation, and system mediation logic. NiFi has a web-based user interface for design, control, feedback, and monitoring of dataflows [1].
-
-<!--
-->Processor: Processors actually perform the work. A processor does some combination of data Routing, Transformation, or Mediation between systems. Processors have access to attributes of a given FlowFile and its content stream. Processors can operate on zero or more FlowFiles in a given unit of work and either commit that work or rollback.
-
-->Connection :  Connections provide the actual linkage between processors. These act as queues and allow various processes to interact at differing rates. These queues then can be prioritized dynamically and can have upper bounds on load, which enable back pressure.
-
-->Flowfile: A FlowFile represents each object moving through the system and for each one, NiFi keeps track of a map of key/value pair attribute strings and its associated content of zero or more bytes.
-
-->Flow Controller: The Flow Controller maintains the knowledge of how processes actually connect and manages the threads and allocations thereof which all processes use. The Flow Controller acts as the broker facilitating the exchange of FlowFiles between processors.
-<<<<<<< HEAD
--->
-##Diagrams
-=======
 
 ###Diagrams
 
 Since Nifi is a real complex system, in some diagrams we had to focus on the most interesting part of the system, witch will be highlighted.
 
 ####Logical View
-######Class Diagram
+#####Class Diagram
 
 Has the class diagram is the most complex of all diagrams, we just focused on the Processor API. The Processor is the most important part of nifi, because is the only Component to which access is given to create, remove, modify, or inspect FlowFiles (data and attributes). So next come the classes on the Processor API and what they do.
 
@@ -74,8 +61,7 @@ Has the class diagram is the most complex of all diagrams, we just focused on th
 
 
 ####Development View
-=============================================================================================917588261
-######Component Diagram
+#####Component Diagram
 
 Nifi has a lot of componets wich are difficult to understand. Then the component diagram can easily help to compreend how the components fit together. Next we explain what each component does and witch components has a relation and what kind.
 
@@ -129,21 +115,21 @@ In a containerized environment like NiFi, it is important to allow different ext
 For more information about NiFi Archives and how they are used, see the NiFi Archives (NARs) section in the Developer Guide.
 ![alt tag](https://github.com/Jointome/nifi/blob/master/ArchSW-docs/Images/component.png)
 
-######Package Diagram
+#####Package Diagram
 
 ![alt tag](https://github.com/Jointome/nifi/blob/master/ArchSW-docs/Images/packagediagram.jpg)
 
 ####Process  View
-######Activity Diagram
+#####Activity Diagram
 
 ![alt tag](https://github.com/Jointome/nifi/blob/master/ArchSW-docs/Images/process.JPG)
 
 ####Physical View
-######Deployment Diagram
+#####Deployment Diagram
 
 ![alt tag](https://github.com/Jointome/nifi/blob/master/ArchSW-docs/Images/deployment.png)
 
 
 ####Scenarios
-######Use Cases
+#####Use Cases
 ![alt tag](https://github.com/Jointome/nifi/blob/master/ArchSW-docs/Images/scenarios.png)
