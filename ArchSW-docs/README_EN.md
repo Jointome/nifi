@@ -130,7 +130,7 @@ This Api allows the user to control a NiFi instance in real time.
 #####Activity Diagram
 
 ![alt tag](https://github.com/Jointome/nifi/blob/master/ArchSW-docs/Images/process.JPG)
-![alt tag](https://github.com/Jointome/nifi/blob/master/ArchSW-docs/Images/ActivityDiagram2.JPG)
+![alt tag](https://github.com/Jointome/nifi/blob/master/ArchSW-docs/Images/ActivityDiagram2.png)
 
 ####Physical View
 #####Deployment Diagram
