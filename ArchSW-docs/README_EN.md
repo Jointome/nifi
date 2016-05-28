@@ -132,6 +132,13 @@ This Api allows the user to control a NiFi instance in real time.
 ![alt tag](https://github.com/Jointome/nifi/blob/master/ArchSW-docs/Images/process.JPG)
 ![alt tag](https://github.com/Jointome/nifi/blob/master/ArchSW-docs/Images/ActivityDiagram2.png)
 
+An activity diagram is a graphical representation of workflow of stepwise activities and actions with support for choice, iteration and concurrency.
+NiFi is executed through the shell. Then the user must direct the browser to http://localhost:8080/nifi/. If NiFi supports anonimous access, the user can continue as unknoun. If it doesn't then the user must login.
+To build a dataflow, it's possible to use a template or just create a new dataflow. Then you can do all the modifications you want, save as a new template for a next time or even eliminate it and start again.
+Finally, when the work is done, the user must logout or just stop the execution of NiFi.
+
+
+
 ####Physical View
 #####Deployment Diagram
 
