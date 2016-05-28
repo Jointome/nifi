@@ -4,7 +4,7 @@ Table of Contents
 =================
 
  1. [Introduction](#introduction)
- 2. [NIFI](#nifi)
+ 2. [NiFi](#NiFi)
  3. [Diagrams](#diagrams)
     1. [Logical View](#logical-view)
           1. [Class Diagram](#class-diagram)
@@ -25,35 +25,37 @@ Table of Contents
 
 It is intended with this report to describe a study done to an application chosen by the group, within the Software Architecture discipline.
 
-In an environment which we may find various systems, where some of them create and others consume data, often these systems differ in somes aspects, it becomes necessary to create something that simplifys communication between these systems.
+In an environment which we may find various systems, where some of them create and others consume data, often these systems differ in some aspects, it becomes necessary to create something that simplify communication between these systems.
 
 NiFi was built to automate the flow of data between systems. It supports powerful and scalable directed graphs of data routing, transformation, and system mediation logic.  NiFi has a web-based user interface for design, control, feedback, and monitoring of dataflows.
 
-To study the application architecture we use a set of Unified Modelling Language (UML) diagrams.   As soon, to define the logical view we use class diagram, for the process view we use  the activity diagram, for the development view we use two diagrams, component and package diagram, for the physical view we use a deployment diagram, and for senarios we use the use cases diagram.
+To study the application architecture we use a set of Unified Modeling Language (UML) diagrams.   As soon, to define the logical view we use class diagram, for the process view we use  the activity diagram, for the development view we use two diagrams, component and package diagram, for the physical view we use a deployment diagram, and for scenarios we use the use cases diagram.
 
-Due to the fact the application is very wide, in the diagrams construction we used only a few classses, these classes which are considered of great importance for the application.
+Due to the fact the application is very wide, in the diagrams construction we used only a few classes, these classes which are considered of great importance for the application.
 
 
 #NiFi
 
-Nifi is a graphical interface designed to automatic data flows between different computer, networks, even when the protocols differ.
+NiFi is a graphical interface designed to automatic data flows between different computer, networks, even when the protocols differ.
 Apache NiFi is a dataflow system based on the concepts of flow-based programming. It supports powerful and scalable directed graphs of data routing, transformation, and system mediation logic. NiFi has a web-based user interface for design, control, feedback, and monitoring of dataflows [1].
 
 
 ###Diagrams
 
-Since Nifi is a real complex system, in some diagrams we had to focus on the most interesting part of the system, witch will be highlighted.
+Since NiFi is a real complex system, in some diagrams we had to focus on the most interesting part of the system, witch will be highlighted.
 
 ####Logical View
 #####Class Diagram
 
-As the class diagram is the most complex of all diagrams, we just focused on the Processor API. The Processor is the most important part of nifi, because is the only Component to which access is given to create, remove, modify, or inspect FlowFiles (data and attributes). So next come the classes on the Processor API and what they do.
+![alt tag](https://github.com/Jointome/NiFi/blob/master/ArchSW-docs/Images/classdiagram.jpg)
+
+As the class diagram is the most complex of all diagrams, we just focused on the Processor API. The Processor is the most important part of NiFi, because is the only Component to which access is given to create, remove, modify, or inspect FlowFiles (data and attributes). So next come the classes on the Processor API and what they do.
 
 - The AbstractProcessor is the base class for all Processor Implementation, it provides several methods that will be of interest to Processor developers.
 
 - The ProcessSession class, provides a mechanism by which FlowFiles can be created, destroyed, examined, cloned, and transferred to other Processors. 
 
-- The ProcessContext provides information about how the Processor is currently configured making a connection between a Processor and the framework. Furthermore it allows the processor to perform Framework-specific tasks, such as controling other Processors resoucers, to avoid consumig unnecessary resources.
+- The ProcessContext provides information about how the Processor is currently configured making a connection between a Processor and the framework. Furthermore it allows the processor to perform Framework-specific tasks, such as controlling other Processors resources, to avoid consuming unnecessary resources.
 
 - The ProcessSessionFactory creates the ProcessSession from the AbstractProcessor or the Processor classes.
 
@@ -61,25 +63,25 @@ As the class diagram is the most complex of all diagrams, we just focused on the
 
 - The ProcessorInitializationContext exposes configuration to the Processor that doesn't change throughout the Processor life, like the unique identifier of the Processor.
 
-![alt tag](https://github.com/Jointome/nifi/blob/master/ArchSW-docs/Images/classdiagram.jpg)
-
 ####Development View
 #####Component Diagram
 
-Nifi has a lot of componets wich are difficult to understand. As so the component diagram can easily help to compreend how the components fit together. Next we will explain what each component does and which components relate to each other and who.
+![alt tag](https://github.com/Jointome/NiFi/blob/master/ArchSW-docs/Images/component.png)
 
-- NiFi has the FlowFile. It represents structured data, such as a JSON or XML message, or may represent unstructured data, such as an image. The FlowFile is made up of content and attributes, in witch the content is a stream of bytesand the content is stored as a reference to the content itself, that is stored in the Content Repository. The content is accessed only by means of the Process Session, which is capable of cummunicating with the Content repository itself. These allows the data to be efficiently routed and reasoned about without parsing the content.
+NiFi has a lot of components which are difficult to understand. As so the component diagram can easily help to comprehend how the components fit together. Next we will explain what each component does and which components relate to each other and who.
+
+- NiFi has the FlowFile. It represents structured data, such as a JSON or XML message, or may represent unstructured data, such as an image. The FlowFile is made up of content and attributes, in witch the content is a stream of bytes and the content is stored as a reference to the content itself, that is stored in the Content Repository. The content is accessed only by means of the Process Session, which is capable of communicating with the Content repository itself. These allows the data to be efficiently routed and reasoned about without parsing the content.
 
 - Then it has the Processor, the most used and important component in NiFi. It is responsible for bringing data into the system, pushing data out to other systems, or performing some sort of enrichment, extraction, transformation, splitting, merging, or routing logic for a particular piece of data.
 
 
 - The Processor Node is a wrapper around a Processor, it maintains the Processor state, the configured properties, settings, the Processor scheduled state, and the annotations that are used to describe the Processor. 
 
-- A Reporting Task is a NiFi extension point, producing reports and analyzing NiFi's internal metrics providing information as bulletins that appear directly in the NiFi User Interface. It doesn't have access to individual FlowFiles, instade it has access to all Provenance Events, bullentins, and the metrics shown for components on the graph, such as FlowFiles in Bytes Read, and Bytes Written.
+- A Reporting Task is a NiFi extension point, producing reports and analyzing NiFi's internal metrics providing information as bulletins that appear directly in the NiFi User Interface. It doesn't have access to individual FlowFiles, instead it has access to all Provenance Events, bulletins, and the metrics shown for components on the graph, such as FlowFiles in Bytes Read, and Bytes Written.
 
 - The Controller Service is a mechanism that allows state or resources to be shared across multiple components in the flow. For example, if a very large dataset needs to be loaded, it will generally make sense to use a Controller Service to load it. This allows multiple Processors to make use of this dataset without having to load it multiple times.
 
-- The Process Session makes a connection between Processors and FlowFiles and provides transactional behavior across the tasks that are perfotmed by a Processor. It provides methods to read, write contents to FlowFiles, add and remove FlowFiles from the flow, add and remove attributes from a FlowFile, and route a FlowFile to a particular relationship.
+- The Process Session makes a connection between Processors and FlowFiles and provides transactional behavior across the tasks that are performed by a Processor. It provides methods to read, write contents to FlowFiles, add and remove FlowFiles from the flow, add and remove attributes from a FlowFile, and route a FlowFile to a particular relationship.
 
 - The Process Context provides a bridge between a Processor and its associated Processor Node, providing information about the Processor's current configuration. It also provides mechanisms for accessing the Controller Services that are available, so that Processors are able to take advantage of shared logic or shared resources.
 
@@ -106,22 +108,22 @@ An instance of NiFi will create either a Cluster Manager or a Flow Controller bu
 - The Authority Provider is responsible for determining which users have access to perform which operations. It accomplishes this by providing a list of Authorities, or Roles, that a given user is allowed to possess. In this way, a central authority service can be used to dictate which Roles a given user is allowed to have, but just because a user is allowed to be granted the ADMIN role, for example, does not mean that the user should have the ADMIN role for a particular instance.
 
 - Resources
-NiFi's User Interface shows only information that is available via the NiFi RESTful API. This is accomplished by accessing the different endpoints that are defined in the *-Resource classes. For example, the ProcessorResource class is responsible for defining the endpoints that are used to interact with the different Processors in the flow, including the addition and removal of Processors. The ProvenanceResource class is responsible for defining the endpoints that are used to interact with the Provenance Repository, such as executing queries.
+NiFi's User Interface shows only information that is available via the NiFi RESTful API. This is accomplished by accessing the different end points that are defined in the *-Resource classes. For example, the ProcessorResource class is responsible for defining the end points that are used to interact with the different Processors in the flow, including the addition and removal of Processors. The ProvenanceResource class is responsible for defining the end points that are used to interact with the Provenance Repository, such as executing queries.
 
 - The Bootstrap allows the user to easily configure how the NiFi JVM will be started by relying on the configuration provided in the bootstrap.properties file. This allows the application to easily be started with Remote Debugging enabled, with specified minimum and maximum heap sizes, and with other important JVM options.
-Once the NIFi application has been started, the bootstrap is then responsible for monitoring NiFi and restarting the service as needed in order to ensure that the application continues to provide reliable dataflow.
+Once the NiFi application has been started, the bootstrap is then responsible for monitoring NiFi and restarting the service as needed in order to ensure that the application continues to provide reliable dataflow.
 
 - NarClassLoader
 In a containerized environment like NiFi, it is important to allow different extension points to have arbitrary dependencies without those dependencies affecting other, unrelated extension points. In Java, the mechanism for doing this is the ClassLoader. NiFi defines its own implementation of the ClassLoader, the NarClassLoader. Each NiFi Archive (NAR) has its own NarClassLoader that is responsible for loading the classes defined in that NAR. Additionally, it is responsible for providing native library isolation, so that a Processor, for example, can depend on native libraries that are not shared with other components. This is accomplished by placing those native libraries in the NAR's native directory.
 
-![alt tag](https://github.com/Jointome/nifi/blob/master/ArchSW-docs/Images/component.png)
+
 
 #####Package Diagram
 
-![alt tag](https://github.com/Jointome/nifi/blob/master/ArchSW-docs/Images/packagediagram.jpg)
+![alt tag](https://github.com/Jointome/NiFi/blob/master/ArchSW-docs/Images/packagediagram.jpg)
 
-The Package Diagram is complex, so we opted for studing only the API section. Folowing the definitions and explanations on the Component Diagram and the Class Diagram we can easily understand what is appening in the API package.
-As we can see in the diagram the processor is the most solicitaded package, it can manipulate the FlowFile, annotations, reports, interact with components. Therefore we can see they all focus in the Processor in the end.
+The Package Diagram is complex, so we opted for studying only the API section. Following the definitions and explanations on the Component Diagram and the Class Diagram we can easily understand what is happening in the API package.
+As we can see in the diagram the processor is the most solicited package, it can manipulate the FlowFile, annotations, reports, interact with components. Therefore we can see they all focus in the Processor in the end.
 This Api allows the user to control a NiFi instance in real time.
 
 ####Process  View
