@@ -136,26 +136,11 @@ This Api allows the user to control a NiFi instance in real time.
 
 ![alt tag](https://github.com/Jointome/nifi/blob/master/ArchSW-docs/Images/deployment.png)
 
-NiFi executes within a JVM living within a host operating system, and the NiFi components lives within the JVM. 
-
-- **Web Server:** hosts NiFi’s HTTP-based command and control API.
-
-- **Flow Controller:** is the brains of the operation. It provides threads for extensions to run on and manages their schedule of when they’ll receive resources to execute.
-
-- **Extensions:** are operate/execute within the JVM. 
-
-- **FlowFile Repository:** is where NiFi keeps track of the state of what it knows about a given FlowFile that is presently active in the flow. The implementation of the repository is pluggable. The default approach is a persistent Write-Ahead Log that lives on a specified disk partition.
-
-- **Content Repository:** is where the actual content bytes of a given FlowFile live. The implementation of the repository is pluggable. The default approach is a fairly simple mechanism, which stores blocks of data in the file system. More than one file system storage location can be specified so as to get different physical partitions engaged to reduce contention on any single volume.
-
-- **Provenance Repository:** is where all provenance event data is stored. The repository construct is pluggable with the default implementation being to use one or more physical disk volumes. Within each location event data is indexed and searchable.
-
-
 ####Scenarios
 #####Use Cases
-
 In order to use nifi, it's necessary to use a dataflow. The user can create one dataflow, use one template, or edit a previously used one.
 When the user has te dataflow ready, the next step is to create a processor, or in case of using a template, configure. When the processor is in the dataflow, it's time to add the components, which can be of two types, input or output. After we can connect the components with themselves and with and the processor/processors. When all it's configured the dataflow can start and the user can also stop it.
+
 
 ![alt tag](https://github.com/Jointome/nifi/blob/master/ArchSW-docs/Images/scenarios.png)
 
