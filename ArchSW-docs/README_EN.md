@@ -4,10 +4,9 @@
 Table of Contents
 =================
 
- 1. [Description](#description)
- 2. [Introduction](#introduction)
- 3. [NIFI](#nifi)
- 4. [Diagrams](#diagrams)
+ 1. [Introduction](#introduction)
+ 2. [NIFI](#nifi)
+ 3. [Diagrams](#diagrams)
     1. [Logical View](#logical-view)
           1. [Class Diagram](#class-diagram)
     2. [Development View](#development-view)
@@ -22,7 +21,7 @@ Table of Contents
 
 #Description
 Nifi is a graphical interface designed to automatic data flows between different computer, networks, even when the protocols differ.
-
+=======
 ##Introduction
 
 It is intended with this report to describe a study done to an application chosen by the group, within the Software Architecture discipline.
@@ -31,12 +30,13 @@ In an environment which we may find various systems, where some of them create a
 
 NiFi was built to automate the flow of data between systems. It supports powerful and scalable directed graphs of data routing, transformation, and system mediation logic.  NiFi has a web-based user interface for design, control, feedback, and monitoring of dataflows.
 
-<!--
+To study the application architecture we use a set of Unified Modelling Language (UML) diagrams.   As soon, to define the logical view we use class diagram, for the process view we use  the activity diagram, for the development view we use two diagrams, component and package diagram, for the physical view we use a deployment diagram, and for senarios we use the use cases diagram.
+
 ##NIFI
 
-//description of the program
+Apache NiFi is a dataflow system based on the concepts of flow-based programming. It supports powerful and scalable directed graphs of data routing, transformation, and system mediation logic. NiFi has a web-based user interface for design, control, feedback, and monitoring of dataflows [1].
 
-
+<!--
 ->Processor: Processors actually perform the work. A processor does some combination of data Routing, Transformation, or Mediation between systems. Processors have access to attributes of a given FlowFile and its content stream. Processors can operate on zero or more FlowFiles in a given unit of work and either commit that work or rollback.
 
 ->Connection :  Connections provide the actual linkage between processors. These act as queues and allow various processes to interact at differing rates. These queues then can be prioritized dynamically and can have upper bounds on load, which enable back pressure.
@@ -44,8 +44,12 @@ NiFi was built to automate the flow of data between systems. It supports powerfu
 ->Flowfile: A FlowFile represents each object moving through the system and for each one, NiFi keeps track of a map of key/value pair attribute strings and its associated content of zero or more bytes.
 
 ->Flow Controller: The Flow Controller maintains the knowledge of how processes actually connect and manages the threads and allocations thereof which all processes use. The Flow Controller acts as the broker facilitating the exchange of FlowFiles between processors.
+<<<<<<< HEAD
 -->
 ##Diagrams
+=======
+
+###Diagrams
 
 Since Nifi is a real complex system, in some diagrams we had to focus on the most interesting part of the system, witch will be highlighted.
 
@@ -67,6 +71,7 @@ Has the class diagram is the most complex of all diagrams, we just focused on th
 - The ProcessorInitializationContext exposes configuration to the Processor that doesn't change throughout the Processor life, like the unique identifier of the Processor.
 
 ![alt tag](https://github.com/Jointome/nifi/blob/master/ArchSW-docs/Images/classdiagram.jpg)
+
 
 ####Development View
 =============================================================================================917588261
