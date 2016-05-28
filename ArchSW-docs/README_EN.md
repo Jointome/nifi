@@ -33,8 +33,9 @@ To study the application architecture we use a set of Unified Modelling Language
 
 Due to the fact the application is very wide, in the diagrams construction we used only a few classses, these classes which are considered of great importance for the application.
 
+=================
 
-##NiFi
+#NiFi
 
 Nifi is a graphical interface designed to automatic data flows between different computer, networks, even when the protocols differ.
 Apache NiFi is a dataflow system based on the concepts of flow-based programming. It supports powerful and scalable directed graphs of data routing, transformation, and system mediation logic. NiFi has a web-based user interface for design, control, feedback, and monitoring of dataflows [1].
@@ -46,15 +47,16 @@ Apache NiFi is a dataflow system based on the concepts of flow-based programming
 Since Nifi is a real complex system, in some diagrams we had to focus on the most interesting part of the system, witch will be highlighted.
 
 ####Logical View
+=================
 #####Class Diagram
 
-Has the class diagram is the most complex of all diagrams, we just focused on the Processor API. The Processor is the most important part of nifi, because is the only Component to which access is given to create, remove, modify, or inspect FlowFiles (data and attributes). So next come the classes on the Processor API and what they do.
+As the class diagram is the most complex of all diagrams, we just focused on the Processor API. The Processor is the most important part of nifi, because is the only Component to which access is given to create, remove, modify, or inspect FlowFiles (data and attributes). So next come the classes on the Processor API and what they do.
 
 - The AbstractProcessor is the base class for all Processor Implementation, it provides several methods that will be of interest to Processor developers.
 
 - The ProcessSession class, provides a mechanism by which FlowFiles can be created, destroyed, examined, cloned, and transferred to other Processors. 
 
-- The ProcessContext provides information about how the Processor is currently configured making a connection between a Processor and the framework. Furthermore it allows the processor to perform Framework-specific tasks, has controling other Processors resoucers, to avoid consumig unnecessary resources.
+- The ProcessContext provides information about how the Processor is currently configured making a connection between a Processor and the framework. Furthermore it allows the processor to perform Framework-specific tasks, such as controling other Processors resoucers, to avoid consumig unnecessary resources.
 
 - The ProcessSessionFactory creates the ProcessSession from the AbstractProcessor or the Processor classes.
 
@@ -65,33 +67,33 @@ Has the class diagram is the most complex of all diagrams, we just focused on th
 ![alt tag](https://github.com/Jointome/nifi/blob/master/ArchSW-docs/Images/classdiagram.jpg)
 
 ####Development View
+=================
 #####Component Diagram
 
-Nifi has a lot of componets wich are difficult to understand. Then the component diagram can easily help to compreend how the components fit together. Next we explain what each component does and witch components has a relation and what kind.
+Nifi has a lot of componets wich are difficult to understand. As so the component diagram can easily help to compreend how the components fit together. Next we will explain what each component does and which components relate to each other and who.
 
-- NiFi has the FlowFile. It represents structured data, such as a JSON or XML message, or may represent unstructured data, such as an image. The FlowFile is made up of content and attributes, in witch the content is a stream of bytesand the content is stored as a reference to the content itself, that is stored in the Content Repository. The content is accessed only by means of the Process Session, which is capable of cummunicating with the Content repository itself. These allows the data to be efficiently routed and reasoned abot without parsing the content.
+- NiFi has the FlowFile. It represents structured data, such as a JSON or XML message, or may represent unstructured data, such as an image. The FlowFile is made up of content and attributes, in witch the content is a stream of bytesand the content is stored as a reference to the content itself, that is stored in the Content Repository. The content is accessed only by means of the Process Session, which is capable of cummunicating with the Content repository itself. These allows the data to be efficiently routed and reasoned about without parsing the content.
 
-- Then it has the Processor, the most used component in NiFi. It is responsible for bringing data into the system, pushing data out to other systems, or performing some sort of enrichment, extraction, transformation, splitting, merging, or routing logic for a particular piece of data.
+- Then it has the Processor, the most used and important component in NiFi. It is responsible for bringing data into the system, pushing data out to other systems, or performing some sort of enrichment, extraction, transformation, splitting, merging, or routing logic for a particular piece of data.
 
 
 - The Processor Node is a wrapper around a Processor, it maintains the Processor state, the configured properties, settings, the Processor scheduled state, and the annotations that are used to describe the Processor. 
 
-- A Reporting Task is a NiFi extension point, producing reports and analyzing NiFi's internal metrics providing information as bulletins that appear directly in the NiFi User Interface. It doesn't have access to individual FlowFiles, instade it has access to all Provenance Events, bullentins, and the metrics shown for components on the graph, such as FlowFiles In, Bytes Read, and Bytes Written.
+- A Reporting Task is a NiFi extension point, producing reports and analyzing NiFi's internal metrics providing information as bulletins that appear directly in the NiFi User Interface. It doesn't have access to individual FlowFiles, instade it has access to all Provenance Events, bullentins, and the metrics shown for components on the graph, such as FlowFiles in Bytes Read, and Bytes Written.
 
-- The Controller Service is a mechanism that allows state or resources to be shared across multiple components in the flow. For example, if a very large dataset needs to be loaded, it will generally make sense to use a Controller Service to load the dataset. This allows multiple Processors to make use of this dataset without having to load the dataset multiple times.
+- The Controller Service is a mechanism that allows state or resources to be shared across multiple components in the flow. For example, if a very large dataset needs to be loaded, it will generally make sense to use a Controller Service to load it. This allows multiple Processors to make use of this dataset without having to load it multiple times.
 
 - The Process Session makes a connection between Processors and FlowFiles and provides transactional behavior across the tasks that are perfotmed by a Processor. It provides methods to read, write contents to FlowFiles, add and remove FlowFiles from the flow, add and remove attributes from a FlowFile, and route a FlowFile to a particular relationship.
 
 - The Process Context provides a bridge between a Processor and its associated Processor Node, providing information about the Processor's current configuration. It also provides mechanisms for accessing the Controller Services that are available, so that Processors are able to take advantage of shared logic or shared resources.
-FlowFile Repository
 
-- The FlowFile Repository is responsible for storing the FlowFiles' attributes and state, it is considered a 'private API'.
+- The FlowFile Repository is responsible for storing the FlowFiles attributes and state, it's considered a 'private API'.
 
 - The Content Repository is responsible for storing the content of FlowFiles and providing mechanisms for reading the contents of a FlowFile. It is considered a 'private API'.
 
 - The Provenance Repository is responsible for storing, retrieving, and querying all Data Provenance Events. Each time that a FlowFile is received, routed, cloned, forked, modified, sent, or dropped, a Provenance Event is generated that details this information. 
 
-- The Provenance Repository allows this information to be stored about each FlowFile as it traverses through the system and provides a mechanism for assembling a "Lineage view" of a FlowFile, so that a graphical representation can be shown of exactly how the FlowFile was handled. It is considered a 'private API'.
+- The Provenance Repository allows this information to be stored about each FlowFile as it wonders through the system and provides a mechanism for assembling a "Lineage view" of a FlowFile, so that a graphical representation can be shown of exactly how the FlowFile was handled. It is considered a 'private API'.
 
 - The Process Scheduler invokes the Processor or a Reporting Task by scheduling it. The scheduler is also responsible for scheduling framework tasks to run at periodic intervals and maintaining the schedule state of each component, as well as the current number of active threads. 
 
@@ -124,19 +126,26 @@ For more information about NiFi Archives and how they are used, see the NiFi Arc
 ![alt tag](https://github.com/Jointome/nifi/blob/master/ArchSW-docs/Images/packagediagram.jpg)
 
 ####Process  View
+=================
 #####Activity Diagram
 
 ![alt tag](https://github.com/Jointome/nifi/blob/master/ArchSW-docs/Images/process.JPG)
 
 ####Physical View
+=================
 #####Deployment Diagram
 
 ![alt tag](https://github.com/Jointome/nifi/blob/master/ArchSW-docs/Images/deployment.png)
 
 ####Scenarios
+=================
 #####Use Cases
 ![alt tag](https://github.com/Jointome/nifi/blob/master/ArchSW-docs/Images/scenarios.png)
 
+=================
+
 ##Conclusion
+
+=================
 
 ##References
