@@ -4,10 +4,9 @@
 Table of Contents
 =================
 
- 1. [Description](#description)
- 2. [Introduction](#introduction)
- 3. [NIFI](#nifi)
- 4. [Diagrams](#diagrams)
+ 1. [Introduction](#introduction)
+ 2. [NIFI](#nifi)
+ 3. [Diagrams](#diagrams)
     1. [Logical View](#logical-view)
           1. [Class Diagram](#class-diagram)
     2. [Development View](#development-view)
@@ -20,10 +19,6 @@ Table of Contents
     5. [Scenarios](#scenarios)
           1. [Use Cases](#use-cases)
 
-#Description
-Nifi is a graphical interface designed to automatic data flows between different computer, networks, even when the protocols differ.
-
-#REPORT
 
 ##Introduction
 
@@ -32,6 +27,8 @@ It is intended with this report to describe a study done to an application chose
 In an environment which we may find various systems, where some of them create and others consume data, often these systems differ in somes aspects, it becomes necessary to create something that simplifys communication between these systems.
 
 NiFi was built to automate the flow of data between systems. It supports powerful and scalable directed graphs of data routing, transformation, and system mediation logic.  NiFi has a web-based user interface for design, control, feedback, and monitoring of dataflows.
+
+To study the application architecture we use a set of Unified Modelling Language (UML) diagrams.   As soon, to define the logical view we use class diagram, for the process view we use  the activity diagram, for the development view we use two diagrams, component and package diagram, for the physical view we use a deployment diagram, and for senarios we use the use cases diagram.
 
 
 ##NIFI
@@ -70,6 +67,13 @@ Has the class diagram is the most complex of all diagrams, we just focused on th
 
 ![alt tag](https://github.com/Jointome/nifi/blob/master/ArchSW-docs/Images/classdiagram.jpg)
 
+
+####Process  View
+######Activity Diagram
+
+![alt tag](https://github.com/Jointome/nifi/blob/master/ArchSW-docs/Images/process.JPG)
+
+
 ####Development View
 
 The component diagram is used to represent components, ports, interfaces and relationships between all of the previously mentioned to form larger components and/or software systems. 
@@ -81,10 +85,6 @@ The component diagram is used to represent components, ports, interfaces and rel
 
 ![alt tag](https://github.com/Jointome/nifi/blob/master/ArchSW-docs/Images/packagediagram.jpg)
 
-####Process  View
-######Activity Diagram
-
-![alt tag](https://github.com/Jointome/nifi/blob/master/ArchSW-docs/Images/process.JPG)
 
 ####Physical View
 ######Deployment Diagram
