@@ -17,12 +17,9 @@ Table of Contents
           1. [Deployment Diagram](#deployment-diagram)
     5. [Scenarios](#scenarios)
           1. [Use Cases](#use-cases)
+ 4. [Conclusion](#conclusion)
+ 5. [References](#references)
 
-
-#NiFi
-
-Nifi is a graphical interface designed to automatic data flows between different computer, networks, even when the protocols differ.
-Apache NiFi is a dataflow system based on the concepts of flow-based programming. It supports powerful and scalable directed graphs of data routing, transformation, and system mediation logic. NiFi has a web-based user interface for design, control, feedback, and monitoring of dataflows [1].
 
 ##Introduction
 
@@ -33,6 +30,15 @@ In an environment which we may find various systems, where some of them create a
 NiFi was built to automate the flow of data between systems. It supports powerful and scalable directed graphs of data routing, transformation, and system mediation logic.  NiFi has a web-based user interface for design, control, feedback, and monitoring of dataflows.
 
 To study the application architecture we use a set of Unified Modelling Language (UML) diagrams.   As soon, to define the logical view we use class diagram, for the process view we use  the activity diagram, for the development view we use two diagrams, component and package diagram, for the physical view we use a deployment diagram, and for senarios we use the use cases diagram.
+
+Due to the fact the application is very wide, in the diagrams construction we used only a few classses, these classes which are considered of great importance for the application.
+
+=================
+
+#NiFi
+
+Nifi is a graphical interface designed to automatic data flows between different computer, networks, even when the protocols differ.
+Apache NiFi is a dataflow system based on the concepts of flow-based programming. It supports powerful and scalable directed graphs of data routing, transformation, and system mediation logic. NiFi has a web-based user interface for design, control, feedback, and monitoring of dataflows [1].
 
 =================
 
@@ -136,3 +142,11 @@ For more information about NiFi Archives and how they are used, see the NiFi Arc
 =================
 #####Use Cases
 ![alt tag](https://github.com/Jointome/nifi/blob/master/ArchSW-docs/Images/scenarios.png)
+
+=================
+
+##Conclusion
+
+=================
+
+##References
