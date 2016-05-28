@@ -144,6 +144,24 @@ Finally, when the work is done, the user must logout or just stop the execution 
 
 ![alt tag](https://github.com/Jointome/nifi/blob/master/ArchSW-docs/Images/deployment.png)
 
+The deployment diagram shows the dependences between the various hardware components.
+
+
+NiFi executes within a JVM living within a host operating system. The primary components of NiFi then living within the JVM are as follows:
+
+Web Server - The purpose of the web server is to host NiFi’s HTTP-based command and control API.
+
+Flow Controller - The flow controller is the brains of the operation. It provides threads for extensions to run on and manages their schedule of when they’ll receive resources to execute.
+
+Extensions - There are various types of extensions for NiFi which will be described in other documents. But the key point here is that extensions operate/execute within the JVM.
+
+FlowFile Repository - The FlowFile Repository is where NiFi keeps track of the state of what it knows about a given FlowFile that is presently active in the flow. The implementation of the repository is pluggable. The default approach is a persistent Write-Ahead Log that lives on a specified disk partition.
+
+Content Repository - The Content Repository is where the actual content bytes of a given FlowFile live. The implementation of the repository is pluggable. The default approach is a fairly simple mechanism, which stores blocks of data in the file system. More than one file system storage location can be specified so as to get different physical partitions engaged to reduce contention on any single volume.
+
+Provenance Repository - The Provenance Repository is where all provenance event data is stored. The repository construct is pluggable with the default implementation being to use one or more physical disk volumes. Within each location event data is indexed and searchable.
+
+
 ####Scenarios
 #####Use Cases
 
