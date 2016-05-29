@@ -131,8 +131,8 @@ Finally, when the work is done, the user must logout or just stop the execution 
 
 The deployment diagram shows the dependences between the various hardware components.
 
-
-NiFi executes within a JVM living within a host operating system. The primary components of NiFi then living within the JVM are as follows:
+NiFi executes within a JVM living within a host operating system. Then the JVM runs Web Server, has a Flow Controler and a LocalStorage that is connected with the OS.
+Next follows the functionallity of all of the components of NiFi living within the JVM:
 
 Web Server - The purpose of the web server is to host NiFi’s HTTP-based command and control API.
 
