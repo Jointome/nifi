@@ -156,7 +156,6 @@ This Api allows the user to control a NiFi instance in real time.
 ####Process  View
 #####Activity Diagram
 
-![alt tag](https://github.com/Jointome/nifi/blob/master/ArchSW-docs/Images/process.JPG)
 ![alt tag](https://github.com/Jointome/nifi/blob/master/ArchSW-docs/Images/ActivityDiagram2.png)
 
 An activity diagram is a graphical representation of workflow of stepwise activities and actions with support for choice, iteration and concurrency.
