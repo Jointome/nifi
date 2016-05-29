@@ -18,7 +18,6 @@ Table of Contents
     5. [Scenarios](#scenarios)
           1. [Use Cases](#use-cases)
  4. [Conclusion](#conclusion)
- 5. [References](#references)
 
 
 ##Introduction
@@ -37,7 +36,35 @@ Due to the fact the application is very wide, in the diagrams construction we us
 #NiFi
 
 NiFi is a graphical interface designed to automatic data flows between different computer, networks, even when the protocols differ.
-Apache NiFi is a dataflow system based on the concepts of flow-based programming. It supports powerful and scalable directed graphs of data routing, transformation, and system mediation logic. NiFi has a web-based user interface for design, control, feedback, and monitoring of dataflows [1].
+Apache NiFi is a dataflow system based on the concepts of flow-based programming. It supports powerful and scalable directed graphs of data routing, transformation, and system mediation logic. NiFi has a web-based user interface for design, control, feedback, and monitoring of dataflows.
+
+####Terminology
+
+- **FlowFile:** 
+
+Unit of data moving through the system; 
+
+Is made up of two parts: Attributes and Content. The Content is the User Data itself. Attributes 	are key-value pairs that are associated with the User Data.
+
+
+- **Processor**
+
+Perform the work;
+
+Is responsible for creating, sending, receiving, transforming, routing, splitting, merging, and 	processing FlowFiles.
+
+- **Connection**
+
+Links between processors;
+
+Queues that cam be dynamically prioritized.
+
+- **Process Group**
+
+Set of processors and their connections;
+
+Receive data via input ports, send data via output ports
+
 
 
 ###Diagrams
@@ -175,4 +202,3 @@ When the user has the dataflow ready, the next step is to create a processor, or
 ##Conclusion
 
 
-##References
