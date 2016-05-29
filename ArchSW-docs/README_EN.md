@@ -18,7 +18,6 @@ Table of Contents
     5. [Scenarios](#scenarios)
           1. [Use Cases](#use-cases)
  4. [Conclusion](#conclusion)
- 5. [References](#references)
 
 
 ##Introduction
@@ -29,7 +28,47 @@ In an environment which we may find a big varity of systems, where some of them 
 
 NiFi was built to automate the flow of data between systems. It has a web-based user interface for design, control, feedback, and monitoring of dataflows, allowing the user to automate all the Data Flow incoming and outcoming the system.
 
+<<<<<<< HEAD
 To study the application architecture we use a set of Unified Modeling Language (UML) diagrams. Then, to define the Logical View we used  Class Diagram, for the Process View we used the Activity Diagram, for the Development View we used two diagrams, Component and Package Diagram, for the Physical View we use a Deployment Diagram, and for Scenarios we use the Use Cases Diagram.
+=======
+To study the application architecture we use a set of Unified Modeling Language (UML) diagrams.   As soon, to define the logical view we use class diagram, for the process view we use  the activity diagram, for the development view we use two diagrams, component and package diagram, for the physical view we use a deployment diagram, and for scenarios we use the use cases diagram.
+
+Due to the fact the application is very wide, in the diagrams construction we used only a few classes, these classes which are considered of great importance for the application.
+
+
+#NiFi
+
+NiFi is a graphical interface designed to automatic data flows between different computer, networks, even when the protocols differ.
+Apache NiFi is a dataflow system based on the concepts of flow-based programming. It supports powerful and scalable directed graphs of data routing, transformation, and system mediation logic. NiFi has a web-based user interface for design, control, feedback, and monitoring of dataflows.
+
+####Terminology
+
+- **FlowFile:** 
+
+Unit of data moving through the system; 
+
+Is made up of two parts: Attributes and Content. The Content is the User Data itself. Attributes 	are key-value pairs that are associated with the User Data.
+
+
+- **Processor**
+
+Perform the work;
+
+Is responsible for creating, sending, receiving, transforming, routing, splitting, merging, and 	processing FlowFiles.
+
+- **Connection**
+
+Links between processors;
+
+Queues that cam be dynamically prioritized.
+
+- **Process Group**
+
+Set of processors and their connections;
+
+Receive data via input ports, send data via output ports
+
+>>>>>>> b304ce42d0cb49b4a23efc2758d719fb1ec477d1
 
 Due to the fact that the application is very wide, we used only a few classes in the diagrams construction, the classes which we considered of great importance for the application.
 
@@ -122,7 +161,6 @@ This Api allows the user to control a NiFi instance in real time.
 ####Process  View
 #####Activity Diagram
 
-![alt tag](https://github.com/Jointome/nifi/blob/master/ArchSW-docs/Images/process.JPG)
 ![alt tag](https://github.com/Jointome/nifi/blob/master/ArchSW-docs/Images/ActivityDiagram2.png)
 
 An activity diagram is a graphical representation of workflow of stepwise activities and actions with support for choice, iteration and concurrency.
@@ -168,4 +206,3 @@ When the user has the dataflow ready, the next step is to create a processor, or
 ##Conclusion
 
 
-##References
