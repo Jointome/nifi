@@ -25,20 +25,13 @@ Table of Contents
 
 It is intended with this report to describe a study done to an application chosen by the group, within the Software Architecture discipline.
 
-In an environment which we may find various systems, where some of them create and others consume data, often these systems differ in some aspects, it becomes necessary to create something that simplify communication between these systems.
+In an environment which we may find a big varity of systems, where some of them create and others consume data, often they differ in some aspects, as the type of communication, and it becomes necessary to create something that simplifies it between these systems.
 
-NiFi was built to automate the flow of data between systems. It supports powerful and scalable directed graphs of data routing, transformation, and system mediation logic.  NiFi has a web-based user interface for design, control, feedback, and monitoring of dataflows.
+NiFi was built to automate the flow of data between systems. It has a web-based user interface for design, control, feedback, and monitoring of dataflows, allowing the user to automate all the Data Flow incoming and outcoming the system.
 
-To study the application architecture we use a set of Unified Modeling Language (UML) diagrams.   As soon, to define the logical view we use class diagram, for the process view we use  the activity diagram, for the development view we use two diagrams, component and package diagram, for the physical view we use a deployment diagram, and for scenarios we use the use cases diagram.
+To study the application architecture we use a set of Unified Modeling Language (UML) diagrams. Then, to define the Logical View we used  Class Diagram, for the Process View we used the Activity Diagram, for the Development View we used two diagrams, Component and Package Diagram, for the Physical View we use a Deployment Diagram, and for Scenarios we use the Use Cases Diagram.
 
-Due to the fact the application is very wide, in the diagrams construction we used only a few classes, these classes which are considered of great importance for the application.
-
-
-#NiFi
-
-NiFi is a graphical interface designed to automatic data flows between different computer, networks, even when the protocols differ.
-Apache NiFi is a dataflow system based on the concepts of flow-based programming. It supports powerful and scalable directed graphs of data routing, transformation, and system mediation logic. NiFi has a web-based user interface for design, control, feedback, and monitoring of dataflows [1].
-
+Due to the fact that the application is very wide, we used only a few classes in the diagrams construction, the classes which we considered of great importance for the application.
 
 ###Diagrams
 
