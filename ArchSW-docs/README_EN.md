@@ -32,12 +32,8 @@ To study the application architecture we use a set of Unified Modeling Language 
 
 Due to the fact that the application is very wide, we used only a few classes in the diagrams construction, the classes which we considered of great importance for the application.
 
-###Diagrams
-
-Since NiFi is a real complex system, in some diagrams we had to focus on the most interesting part of the system, witch will be highlighted.
-
-####Logical View
-#####Class Diagram
+###Logical View
+####Class Diagram
 
 ![alt tag](https://github.com/Jointome/nifi/blob/master/ArchSW-docs/Images/classdiagram.jpg)
 
@@ -55,8 +51,8 @@ As the class diagram is the most complex of all diagrams, we just focused on the
 
 - The ProcessorInitializationContext exposes configuration to the Processor that doesn't change throughout the Processor life, like the unique identifier of the Processor.
 
-####Development View
-#####Component Diagram
+###Development View
+####Component Diagram
 
 ![alt tag](https://github.com/Jointome/nifi/blob/master/ArchSW-docs/Images/component.png)
 
@@ -108,7 +104,7 @@ Once the NiFi application has been started, the bootstrap is then responsible fo
 - NarClassLoader
 In a containerized environment like NiFi, it is important to allow different extension points to have arbitrary dependencies without those dependencies affecting other, unrelated extension points. In Java, the mechanism for doing this is the ClassLoader. NiFi defines its own implementation of the ClassLoader, the NarClassLoader. Each NiFi Archive (NAR) has its own NarClassLoader that is responsible for loading the classes defined in that NAR. Additionally, it is responsible for providing native library isolation, so that a Processor, for example, can depend on native libraries that are not shared with other components. This is accomplished by placing those native libraries in the NAR's native directory.
 
-#####Package Diagram
+####Package Diagram
 
 ![alt tag](https://github.com/Jointome/nifi/blob/master/ArchSW-docs/Images/packagediagram.jpg)
 
@@ -116,20 +112,20 @@ The Package Diagram is complex, so we opted for studying only the API section. F
 As we can see in the diagram the processor is the most solicited package, it can manipulate the FlowFile, annotations, reports, interact with components. Therefore we can see they all focus in the Processor in the end.
 This Api allows the user to control a NiFi instance in real time.
 
-####Process  View
-#####Activity Diagram
+###Process  View
+####Activity Diagram
 
 ![alt tag](https://github.com/Jointome/nifi/blob/master/ArchSW-docs/Images/ActivityDiagram2.png)
 
 An activity diagram is a graphical representation of workflow of stepwise activities and actions with support for choice, iteration and concurrency.
 NiFi is executed through the shell. Then the user must direct the browser to http://localhost:8080/nifi/. If NiFi supports anonimous access, the user can continue as unknoun. If it doesn't then the user must login.
 To build a dataflow, it's possible to use a template or just create a new dataflow. Then you can do all the modifications you want, save as a new template for a next time or even eliminate it and start again.
-Finally, when the work is done, the user must logout or just stop the execution of NiFi.
+Finally, when the work is done, the user must logout or just stop the execution of NiFion the shell.
 
 
 
-####Physical View
-#####Deployment Diagram
+###Physical View
+####Deployment Diagram
 
 ![alt tag](https://github.com/Jointome/nifi/blob/master/ArchSW-docs/Images/deployment.png)
 
@@ -151,8 +147,8 @@ Content Repository - The Content Repository is where the actual content bytes of
 Provenance Repository - The Provenance Repository is where all provenance event data is stored. The repository construct is pluggable with the default implementation being to use one or more physical disk volumes. Within each location event data is indexed and searchable.
 
 
-####Scenarios
-#####Use Cases
+###Scenarios
+####Use Cases
 
 ![alt tag](https://github.com/Jointome/nifi/blob/master/ArchSW-docs/Images/scenarios.png)
 
@@ -162,5 +158,6 @@ When the user has the dataflow ready, the next step is to create a processor, or
 
 
 ##Conclusion
+This is a really interesting program, for the user and for the developer. Since it is Open Source, it can thrill a user who is a developer too. NiFi is complex and extensive, but they have a lot of infos about the program code, and architecture helping the developer to create their own version and manage to create processors or other things, to help in its unique case has a developer/user and transmit it to all the other ones who may need it too.
 
 
