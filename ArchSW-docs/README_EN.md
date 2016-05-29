@@ -4,8 +4,7 @@ Table of Contents
 =================
 
  1. [Introduction](#introduction)
- 2. [NiFi](#NiFi)
- 3. [Diagrams](#diagrams)
+ 2. [Diagrams](#diagrams)
     1. [Logical View](#logical-view)
           1. [Class Diagram](#class-diagram)
     2. [Development View](#development-view)
@@ -17,10 +16,14 @@ Table of Contents
           1. [Deployment Diagram](#deployment-diagram)
     5. [Scenarios](#scenarios)
           1. [Use Cases](#use-cases)
- 4. [Conclusion](#conclusion)
+ 3. [Conclusion](#conclusion)
+ 4. [Information](#information)
+   1.[Authors](#authors)
 
 
 ##Introduction
+
+This is a repor made by students from Porto University, Faculdade de Ciências.
 
 It is intended with this report to describe a study done to an application chosen by the group, within the Software Architecture discipline.
 
@@ -32,6 +35,7 @@ To study the application architecture we use a set of Unified Modeling Language 
 
 Due to the fact that the application is very wide, we used only a few classes in the diagrams construction, the classes which we considered of great importance for the application.
 
+##Diagrams
 ###Logical View
 ####Class Diagram
 
@@ -160,4 +164,23 @@ When the user has the dataflow ready, the next step is to create a processor, or
 ##Conclusion
 This is a really interesting program, for the user and for the developer. Since it is Open Source, it can thrill a user who is a developer too. NiFi is complex and extensive, but they have a lot of infos about the program code, and architecture helping the developer to create their own version and manage to create processors or other things, to help in its unique case has a developer/user and transmit it to all the other ones who may need it too.
 
+##Information
+
+###Authors:
+ -Adélcia Fernandes (up201308701)
+ -Contribuição: 25%
+ 
+ -Luis Carlos Costa (up201305231)
+ -Contribuição: 25%
+
+ -Luis Pedro Costa (up201107683)
+ -Contribuição: 25%
+ 
+ -Rodrigo Costa (up201205747)
+ -Contribuição: 25%
+
+
+Faculdade de Ciências da Universidade do Porto
+
+29-05-2016
 
