@@ -18,7 +18,7 @@ Table of Contents
           1. [Use Cases](#use-cases)
  3. [Conclusion](#conclusion)
  4. [Information](#information)
-   1.[Authors](#authors)
+    1. [Authors](#authors)
 
 
 ##Introduction
@@ -167,17 +167,17 @@ This is a really interesting program, for the user and for the developer. Since 
 ##Information
 
 ###Authors:
- -Adélcia Fernandes (up201308701)
- -Contribuição: 25%
+ - Adélcia Fernandes (up201308701)
+ - Contribuição: 25%
  
- -Luis Carlos Costa (up201305231)
- -Contribuição: 25%
+ - Luis Carlos Costa (up201305231)
+ - Contribuição: 25%
 
- -Luis Pedro Costa (up201107683)
- -Contribuição: 25%
+ - Luis Pedro Costa (up201107683)
+ - Contribuição: 25%
  
- -Rodrigo Costa (up201205747)
- -Contribuição: 25%
+ - Rodrigo Costa (up201205747)
+ - Contribuição: 25%
 
 
 Faculdade de Ciências da Universidade do Porto
